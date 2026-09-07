@@ -1,0 +1,53 @@
+/* ============================================
+   shared/reset.css
+   Reset minimo, sin marca. Cada sitio (home, panbon,
+   joyeria, doxa) lo enlaza primero y luego pone su
+   propio css/style.css encima con su propia identidad.
+   ============================================ */
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+html{
+  -webkit-text-size-adjust: 100%;
+}
+
+body{
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, p, figure{
+  margin: 0;
+}
+
+img, picture, video{
+  max-width: 100%;
+  display: block;
+}
+
+a{
+  color: inherit;
+}
+
+button{
+  font: inherit;
+  cursor: pointer;
+}
+
+ul, ol{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

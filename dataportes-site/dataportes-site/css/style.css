@@ -1,0 +1,169 @@
+:root{
+  --bg: #0b0e1f;
+  --paper: #121630;
+  --ink: #f4f3f0;
+  --ink-soft: rgba(244,243,240,0.66);
+  --line: rgba(244,243,240,0.12);
+
+  --teal: #4f9fbb;
+  --spice: #c98a4a;
+  --gold: #cda23a;
+  --violet: #9d5fd6;
+
+  --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.portal{
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 88px 24px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portal-head{
+  text-align: center;
+  max-width: 520px;
+  margin-bottom: 56px;
+}
+
+.portal-logo{
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  margin: 0 auto 24px;
+}
+
+.portal-eyebrow{
+  font-family: var(--font-display);
+  color: var(--teal);
+  font-size: 0.92rem;
+  margin-bottom: 12px;
+}
+
+.portal-head h1{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 14px;
+}
+
+.portal-lead{
+  color: var(--ink-soft);
+}
+
+.doors{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.door{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 28px;
+  border-radius: 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+  overflow: hidden;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.door::before{
+  content: "";
+  position: absolute;
+  inset: -40% -40% auto auto;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.door-teal::before{ background: var(--teal); }
+.door-spice::before{ background: var(--spice); }
+.door-gold::before{ background: var(--gold); }
+.door-violet::before{ background: var(--violet); }
+
+.door-live:hover{
+  transform: translateY(-3px);
+  border-color: var(--teal);
+  text-decoration: none;
+}
+
+.door h2{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.door p{
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  max-width: 34ch;
+  position: relative;
+}
+
+.door-top{
+  position: relative;
+}
+
+.door-tag{
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: rgba(244,243,240,0.08);
+  color: var(--ink-soft);
+}
+
+.door-live .door-tag{
+  background: rgba(79,159,187,0.18);
+  color: var(--teal);
+}
+
+.door-cta{
+  margin-top: auto;
+  padding-top: 6px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  position: relative;
+}
+
+.door-live .door-cta{ color: var(--teal); }
+.door-cta-soon{ color: var(--ink-soft); }
+
+.door-soon{
+  cursor: default;
+}
+.door-soon:hover{
+  transform: none;
+}
+
+.portal-footer{
+  margin-top: 64px;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 640px){
+  .doors{ grid-template-columns: 1fr; }
+}

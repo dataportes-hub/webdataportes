@@ -103,9 +103,12 @@ body{
 
 .door-live:hover{
   transform: translateY(-3px);
-  border-color: var(--teal);
   text-decoration: none;
 }
+.door-live.door-teal:hover{ border-color: var(--teal); }
+.door-live.door-spice:hover{ border-color: var(--spice); }
+.door-live.door-gold:hover{ border-color: var(--gold); }
+.door-live.door-violet:hover{ border-color: var(--violet); }
 
 .door h2{
   font-family: var(--font-display);

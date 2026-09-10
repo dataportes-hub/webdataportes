@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pan Bon — Gran venta especial | DataPortes</title>
+<meta name="description" content="Venta especial de pan bon artesanal, sobre pedido. Reserva el tuyo antes de que cierren los pedidos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/reset.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="../" class="topbar-back">← DataPortes</a>
+  <span class="topbar-tag">Impulsado por DataPortes</span>
+</header>
+
+<main>
+
+  <!-- ANUNCIO / POSTER -->
+  <section class="poster" id="anuncio">
+    <div class="poster-frame">
+      <p class="poster-eyebrow">Edición limitada · Hecho a mano</p>
+      <h1 class="poster-title">GRAN VENTA<br>DE PAN BON</h1>
+      <p class="poster-sub">Melaza, especias y una receta de siempre. Se hace sobre pedido, en tanda única.</p>
+
+      <div class="ticket-divider" aria-hidden="true"></div>
+
+      <div id="estado-fecha" class="fecha-block">
+        <!-- Rellenado por script.js según el estado activo/sin fecha -->
+      </div>
+
+      <div id="countdown" class="countdown" aria-live="polite">
+        <!-- Rellenado por script.js -->
+      </div>
+
+      <a href="#pedido" class="btn btn-gold" id="cta-reservar">Reservar el mío</a>
+    </div>
+  </section>
+
+  <!-- SOBRE EL PAN BON -->
+  <section class="section" id="sobre">
+    <div class="wrap sobre-grid">
+      <div class="sobre-copy">
+        <p class="kicker">¿Qué es el pan bon?</p>
+        <h2>Un pan con historia, no de panadería de cadena</h2>
+        <p>El pan bon —también conocido simplemente como "bon"— es un pan dulce y oscuro hecho con melaza y especias, parte de la herencia afroantillana de la provincia de Colón y del Caribe. No es un pan de todos los días: se hace en tandas, con tiempo, y se comparte.</p>
+        <p>Cada venta es limitada porque se hornea a mano y sobre pedido — no hay inventario de sobra ni reposición a mitad de semana.</p>
+      </div>
+      <div class="sobre-visual" aria-hidden="true">
+        <svg viewBox="0 0 240 240" class="bon-illustration">
+          <circle cx="120" cy="120" r="112" fill="var(--cream)"/>
+          <ellipse cx="120" cy="140" rx="78" ry="52" fill="var(--maroon)"/>
+          <ellipse cx="120" cy="128" rx="78" ry="52" fill="#8a2a2f"/>
+          <path d="M60 118 Q120 90 180 118" stroke="var(--gold)" stroke-width="3" fill="none" opacity="0.7"/>
+          <path d="M64 132 Q120 106 176 132" stroke="var(--gold)" stroke-width="3" fill="none" opacity="0.5"/>
+          <circle cx="88" cy="110" r="3" fill="var(--gold)"/>
+          <circle cx="140" cy="104" r="3" fill="var(--gold)"/>
+          <circle cx="160" cy="122" r="3" fill="var(--gold)"/>
+          <circle cx="104" cy="128" r="3" fill="var(--gold)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEDIDO -->
+  <section class="section section-pedido" id="pedido">
+    <div class="wrap">
+      <div class="pedido-head">
+        <p class="kicker kicker-light">Haz tu pedido</p>
+        <h2>Aparta el tuyo antes de que cierre la lista</h2>
+        <p id="pedido-info" class="pedido-info"></p>
+      </div>
+
+      <form class="order-form" id="order-form">
+        <div class="field-row">
+          <label for="cantidad">¿Cuántos panes bon quieres?</label>
+          <select id="cantidad" name="cantidad">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5 o más">5 o más</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <label for="nombre">Tu nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamas?">
+        </div>
+        <div class="field-row">
+          <label for="nota">Algo más que debamos saber (opcional)</label>
+          <textarea id="nota" name="nota" rows="2" placeholder="Ej: para recoger en la tarde, o de regalo"></textarea>
+        </div>
+        <button type="submit" class="btn btn-maroon" id="submit-pedido">Enviar pedido por WhatsApp</button>
+        <p class="order-note" id="order-note"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="section section-insta" id="instagram">
+    <div class="wrap insta-inner">
+      <div>
+        <h2>Fotos, precios y avisos van primero a Instagram</h2>
+        <p>Ahí publicamos el precio por unidad, fotos del horneado y cualquier cambio de fecha.</p>
+      </div>
+      <a href="https://instagram.com/TU_INSTAGRAM_PANBON" target="_blank" rel="noopener" class="btn btn-outline-gold">Seguir en Instagram</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>Pan Bon · un proyecto de DataPortes</span>
+    <a href="../" class="footer-link">dataportes.com</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

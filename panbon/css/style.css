@@ -1,0 +1,312 @@
+:root{
+  --maroon: #7a1220;
+  --maroon-deep: #500b15;
+  --gold: #e0a940;
+  --gold-deep: #b9822a;
+  --cream: #fbead2;
+  --dark: #23120c;
+  --ink-soft: rgba(35,18,12,0.72);
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body{
+  background: var(--cream);
+  color: var(--dark);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+.wrap{ max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+h1, h2{ font-family: var(--font-display); color: var(--dark); }
+
+p{ margin: 0 0 1em; }
+
+a{ color: inherit; }
+
+/* ============================================
+   Top bar
+   ============================================ */
+.topbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  font-size: 0.85rem;
+}
+.topbar-back{
+  color: var(--maroon-deep);
+  font-weight: 600;
+  text-decoration: none;
+}
+.topbar-back:hover{ text-decoration: underline; }
+.topbar-tag{ color: var(--ink-soft); }
+
+/* ============================================
+   Poster hero — the "raffle ticket" announcement
+   ============================================ */
+.poster{
+  display: flex;
+  justify-content: center;
+  padding: 12px 20px 56px;
+}
+
+.poster-frame{
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  background: var(--maroon);
+  color: var(--cream);
+  border-radius: 20px;
+  padding: 48px 36px 40px;
+  text-align: center;
+  border: 3px dashed rgba(224,169,64,0.55);
+  box-shadow: 0 24px 60px rgba(80,11,21,0.28);
+}
+
+.poster-eyebrow{
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.poster-title{
+  font-weight: 900;
+  font-size: clamp(2.4rem, 8vw, 3.6rem);
+  line-height: 1.02;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.poster-sub{
+  color: rgba(251,234,210,0.85);
+  max-width: 40ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* dashed + circle "perforation" divider, like a ticket stub */
+.ticket-divider{
+  position: relative;
+  height: 2px;
+  margin: 28px -36px 26px;
+  background-image: repeating-linear-gradient(to right, var(--gold) 0 10px, transparent 10px 20px);
+  opacity: 0.6;
+}
+.ticket-divider::before,
+.ticket-divider::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--cream);
+}
+.ticket-divider::before{ left: -11px; }
+.ticket-divider::after{ right: -11px; }
+
+.fecha-block{
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.fecha-block .fecha-nota{
+  display: block;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: rgba(251,234,210,0.75);
+  margin-top: 6px;
+}
+
+.countdown{
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.count-unit{
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(224,169,64,0.4);
+  border-radius: 12px;
+  padding: 12px 14px;
+  min-width: 68px;
+}
+.count-num{
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--cream);
+}
+.count-label{
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(251,234,210,0.7);
+  margin-top: 2px;
+}
+
+.countdown-message{
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 26px;
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn{
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn:hover{ text-decoration: none; transform: translateY(-1px); }
+
+.btn-gold{
+  background: var(--gold);
+  color: var(--maroon-deep);
+}
+.btn-gold:hover{ background: #f0bf63; }
+
+.btn-maroon{
+  background: var(--maroon);
+  color: var(--cream);
+}
+.btn-maroon:hover{ background: var(--maroon-deep); }
+
+.btn-outline-gold{
+  background: transparent;
+  color: var(--gold-deep);
+  border-color: var(--gold-deep);
+}
+.btn-outline-gold:hover{ background: var(--gold-deep); color: var(--cream); }
+
+.btn[disabled]{
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ============================================
+   Sections
+   ============================================ */
+.section{ padding: 64px 0; }
+
+.kicker{
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--maroon);
+  margin-bottom: 8px;
+}
+.kicker-light{ color: var(--gold); }
+
+.sobre-grid{
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+.sobre-copy p{ color: var(--ink-soft); }
+.bon-illustration{ width: 100%; max-width: 260px; margin: 0 auto; }
+
+/* ============================================
+   Pedido
+   ============================================ */
+.section-pedido{
+  background: var(--dark);
+  color: var(--cream);
+  border-radius: 28px;
+  margin: 0 20px;
+}
+.section-pedido .kicker{ color: var(--gold); }
+.pedido-head{ max-width: 560px; margin: 0 auto 32px; text-align: center; }
+.pedido-info{ color: rgba(251,234,210,0.75); }
+
+.order-form{
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.field-row{ display: flex; flex-direction: column; gap: 6px; }
+.field-row label{ font-size: 0.88rem; color: rgba(251,234,210,0.8); }
+
+.order-form input,
+.order-form select,
+.order-form textarea{
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(224,169,64,0.35);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  resize: vertical;
+}
+.order-form select option{ color: var(--dark); }
+.order-form input::placeholder,
+.order-form textarea::placeholder{ color: rgba(251,234,210,0.4); }
+
+.order-form .btn{ align-self: center; margin-top: 6px; }
+
+.order-note{
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--gold);
+  min-height: 1.4em;
+  margin: 0;
+}
+
+/* ============================================
+   Instagram
+   ============================================ */
+.section-insta{ text-align: center; }
+.insta-inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.insta-inner p{ color: var(--ink-soft); max-width: 46ch; }
+
+/* ============================================
+   Footer
+   ============================================ */
+.site-footer{ padding: 32px 0 48px; }
+.footer-inner{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.footer-link{ color: var(--maroon-deep); font-weight: 600; }
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 720px){
+  .sobre-grid{ grid-template-columns: 1fr; text-align: left; }
+  .sobre-visual{ order: -1; }
+  .section-pedido{ margin: 0 12px; border-radius: 20px; }
+  .poster-frame{ padding: 40px 22px 32px; }
+  .ticket-divider{ margin-left: -22px; margin-right: -22px; }
+}

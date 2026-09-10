@@ -13,7 +13,7 @@ const VENTA = {
   activa: true,
   fecha: "2026-09-15T12:00:00",   // fecha y hora de la entrega / proyección de la venta
   diasCierrePedidoAntes: 3,        // cuántos días antes de "fecha" se cierran los pedidos
-  whatsapp: "50700000000",
+  whatsapp: "50767112592",
 };
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -139,6 +139,14 @@ body{
   background: rgba(79,159,187,0.18);
   color: var(--teal);
 }
+.door-live.door-spice .door-tag{ background: rgba(201,138,74,0.2); color: var(--spice); }
+.door-live.door-gold .door-tag{ background: rgba(205,162,58,0.2); color: var(--gold); }
+.door-live.door-violet .door-tag{ background: rgba(157,95,214,0.2); color: var(--violet); }
+
+.door-live .door-cta{ color: var(--teal); }
+.door-live.door-spice .door-cta{ color: var(--spice); }
+.door-live.door-gold .door-cta{ color: var(--gold); }
+.door-live.door-violet .door-cta{ color: var(--violet); }
 
 .door-cta{
   margin-top: auto;
@@ -148,7 +156,7 @@ body{
   position: relative;
 }
 
-.door-live .door-cta{ color: var(--teal); }
+
 .door-cta-soon{ color: var(--ink-soft); }
 
 .door-soon{
